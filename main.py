@@ -12,7 +12,7 @@ def main():
     parser.add_argument("--scan", help="Target to scan with Nmap")
     parser.add_argument("--file", help="Parse existing scan XML file")
     parser.add_argument("--nmap-args", help="Extra nmap args e.g. '-p 1-65535 -T4'", default="")
-    parser.add_argument("--output", help="Report output filename (md or txt)", default="report.md")
+    parser.add_argument("--output", help="Report output filename (pdf or txt)", default="report.pdf")
     args = parser.parse_args()
 
 # Safety check

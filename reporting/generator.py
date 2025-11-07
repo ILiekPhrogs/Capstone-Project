@@ -1,7 +1,7 @@
 from pathlib import Path
 import datetime
 import json
-from reportlab.lib.pagesizes import LETTER
+from reportlab.lib.pagesizes import LETTER, A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Preformatted, PageBreak

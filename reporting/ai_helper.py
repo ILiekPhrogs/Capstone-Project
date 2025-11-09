@@ -10,6 +10,7 @@ SYSTEM_PROMPT = (
     "Convert structured scan findings into a "
     "clear, prioritized vulnerability report for technical audiences and an executive summary for non-technical stakeholders. "
     "For each finding include: summary, technical details/evidence, risk level, and remediation steps."
+    "Do not use # or * to show seperation within the report, spacing is a better way to show  seperation. Use MLA format."
 )
 
 def _build_prompt_chunk(issues_chunk):

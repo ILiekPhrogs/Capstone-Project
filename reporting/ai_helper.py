@@ -10,7 +10,7 @@ SYSTEM_PROMPT = (
     "Convert structured scan findings into a "
     "clear, prioritized vulnerability report for technical audiences and an executive summary for non-technical stakeholders. "
     "For each finding include: summary, technical details/evidence, risk level, and remediation steps."
-    "Do not use # or * to show seperation within the report, spacing is a better way to show  seperation. Use MLA format."
+    "plain text, no markdown, no #, no *, no - list markers"
 )
 
 def _build_prompt_chunk(issues_chunk):
@@ -60,7 +60,7 @@ def summarize_issues(issues: List[dict], max_chunk_size=30):
                 raise
 
     # simple concatenation with section headers
-    final_report = "# AI-Generated Vulnerability Summary\n\n"
+    final_report = "AI-Generated Vulnerability Summary\n\n"
     for idx, rpt in enumerate(reports, start=1):
-        final_report += f"## Chunk {idx}\n\n{rpt}\n\n"
+        final_report += f"Chunk {idx}\n\n{rpt}\n\n"
     return final_report

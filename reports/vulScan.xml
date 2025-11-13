@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE nmaprun>
+<nmaprun scanner="nmap" args="nmap -sV -oX - 192.0.2.10" start="1700000000" startstr="Mon Jan  1 00:00:00 2024" version="7.80" xmloutputversion="1.03">
+  <scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1024"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  <host>
+    <status state="up" reason="syn-ack" reason_ttl="0"/>
+    <address addr="192.0.2.10" addrtype="ipv4"/>
+    <address addr="00:11:22:33:44:55" addrtype="mac" vendor="ExampleVendor"/>
+    <hostnames>
+      <hostname name="printer.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="ssh" product="OpenSSH" version="7.6p1" extrainfo="protocol 2.0" method="probed" conf="10"/>
+        <script id="ssh-hostkey" output="2048 SHA256:ABCDEF... (RSA)"/>
+      </port>
+
+      <port protocol="tcp" portid="23">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="telnet" method="probed" conf="10"/>
+      </port>
+
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="http" product="nginx" version="1.14.0" extrainfo="Ubuntu"/>
+        <script id="http-title" output="Example Printer Web Interface"/>
+        <script id="http-server-header" output="nginx/1.14.0 (Ubuntu)"/>
+      </port>
+
+      <port protocol="tcp" portid="445">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="microsoft-ds" product="Samba" version="4.3.11" extrainfo="Windows domain"/>
+        <script id="smb-os-discovery" output="OS: Windows 7 or Samba 4.3.11; Server: Samba 4.3.11"/>
+      </port>
+
+      <port protocol="tcp" portid="3389">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="ms-wbt-server" product="Microsoft Terminal Services" method="probed" conf="10"/>
+      </port>
+    </ports>
+
+    <times srtt="12345" rttvar="6789" to="100000"/>
+  </host>
+
+  <host>
+    <status state="up" reason="syn-ack" reason_ttl="0"/>
+    <address addr="198.51.100.5" addrtype="ipv4"/>
+    <hostnames>
+      <hostname name="webapp.example.com" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="http" product="Apache httpd" version="2.4.18" method="probed" conf="10"/>
+        <script id="http-title" output="Vulnerable Demo App"/>
+        <script id="http-headers" output="Server: Apache/2.4.18 (Ubuntu)"/>
+      </port>
+
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" reason_ttl="0"/>
+        <service name="mysql" product="MySQL" version="5.7.31" method="probed" conf="10"/>
+      </port>
+    </ports>
+  </host>
+
+  <runstats>
+    <finished time="1700000060" timestr="Mon Jan  1 00:01:00 2024" elapsed="60.00" summary="Nmap done at Mon Jan 1 00:01:00 2024; 2 IP addresses (2 hosts up) scanned in 60.00 seconds" exit="success"/>
+    <hosts up="2" down="0" total="2"/>
+  </runstats>
+</nmaprun>

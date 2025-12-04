@@ -1,0 +1,96 @@
+# ============================
+# Python / Backend
+# ============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+build/
+*.log
+
+# Virtual environment
+venv/
+.env/
+.env.*
+.venv/
+
+# Local settings or credentials
+config.py
+config.json
+*.secret
+*.key
+
+# Nmap scan result files
+*.xml
+scan*.xml
+nmap*.xml
+
+# Generated reports (PDF, TXT, MD)
+*.pdf
+*.txt
+*.md
+
+# Cache & temp files
+*.tmp
+*.temp
+tmp/
+temp/
+*~
+
+# MacOS clutter
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+
+# ============================
+# Node / React Frontend
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# React build output
+build/
+dist/
+
+# Environment variables
+*.env
+*.env.local
+.env.*.local
+
+# Cache
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# ============================
+# IDE / Editor files
+# ============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+*.code-workspace
+
+
+# ============================
+# OS / Misc
+# ============================
+Thumbs.db
+ehthumbs.db
+Desktop.ini

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Security Scan Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/frontend/styles.css" />
+  </head>
+  <body>
+    <div class="scan-console">
+      <header class="console-header">
+
+      </header>
+
+      <main class="console-main">
+        <section class="panel panel-status">
+          <h2 class="panel-title">API status</h2>
+          <button id="btn-status" class="btn">Check status</button>
+          <pre id="status-output" class="output"></pre>
+        </section>
+
+        <section class="panel panel-scan">
+          <h2 class="panel-title">Run scan</h2>
+          <form id="scan-form" class="form">
+            <label class="label">
+              Target (IP / Host):
+              <input
+                type="text"
+                id="scan-target"
+                class="input"
+                placeholder="127.0.0.1"
+                value="127.0.0.1"
+              />
+            </label>
+            <button type="submit" class="btn btn-primary">Run scan</button>
+          </form>
+          <pre id="scan-output" class="output"></pre>
+        </section>
+
+        <section class="panel panel-upload">
+          <h2 class="panel-title">Upload Nmap XML</h2>
+          <form id="upload-form" class="form">
+            <label class="label">
+              Nmap XML file:
+              <input type="file" id="upload-file" class="input" accept=".xml" />
+            </label>
+            <button type="submit" class="btn">Upload file</button>
+          </form>
+          <pre id="upload-output" class="output"></pre>
+        </section>
+
+        <section class="panel panel-report">
+          <h2 class="panel-title">Download report</h2>
+          <form id="report-form" class="form">
+            <label class="label">
+              Report filename:
+              <input
+                type="text"
+                id="report-filename"
+                class="input"
+                placeholder="127.0.0.1_report.pdf"
+              />
+            </label>
+            <button type="submit" class="btn btn-secondary">
+              Download report
+            </button>
+          </form>
+          <pre id="report-output" class="output"></pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/frontend/script.js"></script>
+  </body>
+  </html>
